@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        font-family: "d2coding";
+        white-space: pre; /* 연속된 공백과 줄바꿈을 그대로 표시 */
+      }
+    </style>
+    <script>
+      function log(...texts) {
+        const logDiv = document.getElementById("log");
+        const newLogEntry = document.createElement("div");
+        // 여러 텍스트 인자를 하나의 문자열로 합칩니다.
+        newLogEntry.textContent = texts.join(" ");
+        logDiv.appendChild(newLogEntry);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="log"></div>
+    <script>
+      //   for (let i = 1; i < 3; i++) {
+      //     log(i);
+      //   }
+      //   log("종료");
+
+      //   let sum = 0;
+      //   for (let i = 1; i <= 10; i++) {
+      //     sum += i;
+      //   }
+      //   log(sum);
+
+      //   let total = 0;
+      //   for (let i = 1; i <= 1000; i++) {
+      //     total += i;
+      //   }
+      //   log(total);
+
+      //   let plus = 0;
+      //   for (let i = 1; i <= 100; i++) {
+      //     plus += i;
+      //   }
+      //   log(plus);
+
+      //   for (let i = 2; i <= 9; i++) {
+      //     log("2 *", i, "=", 2 * i);
+      //   }
+
+      // for (let dan = 2; dan <= 4; dan++) {
+      //   for (let n = 1; n <= 9; n++) {
+      //     log(dan, "*", n, "=", dan * n);
+      //   }
+      // }
+
+      //   100만원 은행 복리 월 이자 1% 12개월 뒤 얼마??-----------------------------------------------
+      //   let money = 1000000;
+
+      //   for (let i = 1; i <= 12; i++) {
+      //     log(money);
+      //     money *= 1.01;
+      //   }
+      //   log(money);
+
+      // for (let line = 0; line < 5; line++) {
+      //   let strStar = "";
+      //   for (let star = 0; star <= line; star++) {
+      //     strStar += "*";
+      //   }
+      //   log(strStar);
+      // }
+
+      // for (let line = 0; line < 5; line++) {
+      //   let strStar = "";
+      //   for (let star = 4; star >= line; star--) {
+      //     strStar += "*";
+      //   }
+      //   log(strStar);
+      // }
+
+      // for (let line = 0; line < 5; line++) {
+      //   let strStar = "";
+      //   for (let star = 5; star > line; star--) {
+      //     strStar += "*";
+      //   }
+      //   log(strStar);
+      // }
+
+      // for (let i = 0; i < 5; i++) {
+      //   let star = "";
+      //   let blank = "";
+      //   for (let k = 5; k > i; k--) {
+      //     blank += " ";
+      //   }
+      //   for (let j = 0; j <= i; j++) {
+      //     star += "*";
+      //   }
+      //   log(blank + star);
+      // }
+
+      // let num = 1;
+      // let sum = 0;
+      // while (num <= 10) {
+      //   sum += num;
+      //   num++;
+      // }
+      // log(sum);
+
+      //   100만원 은행 복리 월 이자 1% 12개월 뒤 얼마??-----------------------------------------------
+      // let money = 1000000;
+
+      // for (let i = 1; i <= 12; i++) {
+      //   log(money);
+      //   money *= 1.01;
+      // }
+      // log(money);
+
+      // let money = 1000000;
+      // let startMonth = 1;
+      // while (startMonth <= 12) {
+      //   log(money);
+      //   money *= 1.01;
+      //   startMonth++;
+      // }
+      // log(money);
+
+      // for (let i = 2; i <= 10; i += 2) {
+      //   log(i);
+      // }
+
+      // for (let i = 1; i <= 10; i++) {
+      //   if (i % 2 == 1) {
+      //     continue;
+      //   }
+      //   log(i);
+      // }
+
+      // for (let i = 1; i <= 10; i++) {
+      //   if (i % 3 == 0) {
+      //     continue;
+      //   }
+      //   log(i);
+      // }
+
+      // for (let i = 1; i <= 10; i++) {
+      //   if (i % 3 != 0) {
+      //     log(i);
+      //   }
+      // }
+
+      // for (let dan = 2; dan <= 9; dan++) {
+      //   for (let n = 2; n <= 9; n++) {
+      //     log(dan, "*", n, "=", dan * 2);
+      //   }
+      // }
+
+      // let dan = 2;
+      // for (let n = 1; n <= 9 && dan <= 9; n++) {
+      //   log(dan, "*", n, "=", dan * n);
+      //   if (n >= 9) {
+      //     dan++;
+      //     n = 0;
+      //   }
+      // }
+
+      // for (let i = 0; i < 81; i++) {
+      //   let dan = parseInt(i / 9) + 1;
+      //   let n = (i % 9) + 1;
+      //   log(dan, "*", n, "=", dan * n);
+      // }
+
+      // let number = 123;
+      // let firstN = number % 10;
+      // let secondN = (number / 10) % 10;
+      // let thirdN = (number / 100) % 10;
+
+      // log(parseInt(firstN + secondN + thirdN));
+
+      // n001 = parseInt(num / 1) % 10;
+      // n010 = parseInt(num / 10) % 10;
+      // n100 = parseInt(num / 100) % 10;
+
+      // let num = 51611231;
+      // sum = num % 10;
+      // while (true) {
+      //   num = parseInt(num / 10);
+      //   sum += num % 10;
+      //   if (num < 10) {
+      //     break;
+      //   }
+      // }
+      // log(sum);
+
+      // let i = 12333;
+      // num = i * 10;
+      // let countA = 0;
+      // while (true) {
+      //   num = parseInt(num / 10);
+      //   if ((num % 10) % 3 == 0) {
+      //     countA++;
+      //   }
+      //   if (num < 10) {
+      //     break;
+      //   }
+      // }
+      // log(countA);
+
+      // let num = prompt("숫자 입력: ");
+      // let sum = 0;
+      // for(let i=0; i<1; ){
+      //     sum+=num%10;
+      //     if(parseInt(num/10) == 0)break;
+      //     num=parseInt(num/10);
+      // }
+      // log(sum);
+      let num = prompt("숫자 입력: ");
+      let count = 0;
+      for (let i = 0; i < 1; ) {
+        if (num % 10 === 3 || num % 10 === 6 || num % 10 === 9) count++;
+        if (parseInt(num / 10) == 0) break;
+        num = parseInt(num / 10);
+      }
+      log(count);
+    </script>
+  </body>
+</html>

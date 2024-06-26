@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function log(...texts) {
+        const logDiv = document.getElementById("log");
+        const newLogEntry = document.createElement("div");
+        // 여러 텍스트 인자를 하나의 문자열로 합칩니다.
+        newLogEntry.textContent = texts.join(" ");
+        logDiv.appendChild(newLogEntry);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="log"></div>
+    <script>
+      // let score = 100;
+      // if (score >= 90) {
+      //   log("A학점");
+      // }
+      // if (score >= 80 && score < 90) {
+      //   log("B학점");
+      // }
+      // if (70 <= score && score < 80) {
+      //   log("C학점");
+      // }
+      // if (60 <= score && score < 70) {
+      //   log("D학점");
+      // }
+      // if (score < 60) {
+      //   log("F학점");
+      // }
+      // log("종료");
+
+      //   let score = 50;
+      //   if (score > 60) {
+      //     log("합격");
+      //   } else {
+      //     log("불합격");
+      //   }
+
+      //   let score = 78;
+      //   if (score >= 90) {
+      //     log("A학점");
+      //   } else {
+      //     if (score >= 80 && score < 90) {
+      //       log("B학점");
+      //     } else {
+      //       if (70 <= score && score < 80) {
+      //         log("C학점");
+      //       } else {
+      //         if (60 <= score && score < 70) {
+      //           log("D학점");
+      //         } else {
+      //           log("F학점");
+      //         }
+      //       }
+      //     }
+      //   }
+      //   log("종료");
+
+      //   let score = 78;
+      //   if (score >= 90) {
+      //     log("A학점");
+      //   } else {
+      //     if (score >= 80) {
+      //       log("B학점");
+      //     } else {
+      //       if (70 <= score) {
+      //         log("C학점");
+      //       } else {
+      //         if (60 <= score) {
+      //           log("D학점");
+      //         } else {
+      //           log("F학점");
+      //         }
+      //       }
+      //     }
+      //   }
+      //   log("종료");
+
+      //--------------------------------------------------------------------------------
+      //   let score = 100;
+      //   if (0 > score || score > 100) {
+      //     document.write("올바른 점수를 입력하세요");
+      //   } else if (score >= 90) {
+      //     log("A학점");
+      //   } else if (score >= 80) {
+      //     log("B학점");
+      //   } else if (score >= 70) {
+      //     log("C학점");
+      //   } else if (score >= 60) {
+      //     log("D학점");
+      //   } else {
+      //     log("F학점");
+      //   }
+      //   log("종료");
+      //--------------------------------------------------------------------------------
+
+      //   let num = 5;
+      //   if (num < 10) {
+      //     document.write("num은 10보다 작아요");
+      //   } else if (num === 10) {
+      //     document.write("num은 10이랑 같아요");
+      //   } else {
+      //     document.write("num은 10보다 커요");
+      //   }
+
+      //   let num = prompt("숫자를 입력하세요");
+      //   if (num < 10) {
+      //     document.write("num은 10보다 작아요");
+      //   } else if (Number(num) === 10) {
+      //     document.write("num은 10이랑 같아요");
+      //   } else {
+      //     document.write("num은 10보다 커요");
+      //   }
+
+      //   let num01 = 5;
+      //   let num02 = 1;
+      //   let num03 = 10;
+      //   let min;
+      //   if (num01 < num02) {
+      //     min = num01;
+      //   } else {
+      //     min = num02;
+      //   }
+      //   console.log(min);
+      //   if (min > num03) {
+      //     min = num03;
+      //   }
+      //   console.log(min);
+
+      //   let age = prompt("나이를 입력하세요");
+      //   if (age > 20 && age < 40) {
+      //     document.write("입장을 환영합니다.");
+      //   } else {
+      //     document.write("입장이 허락되지 않았습니다.");
+      //   }
+
+      //   let score = 100;
+      //   switch (parseInt(score) / 10) {
+      //     case 10:
+      //     case 9:
+      //       log("A학점");
+      //       break;
+      //     case 8:
+      //       log("B학점");
+      //       break;
+      //     case 7:
+      //       log("C학점");
+      //       break;
+      //     case 6:
+      //       log("D학점");
+      //       break;
+      //     default:
+      //       log("F학점");
+      //   }
+
+      //   let classRoom = prompt(
+      //     "학년을 입력하세요",
+      //     "1학년:1, 2학년:2, 3학년:3, 기타:4"
+      //   );
+      //   switch (classRoom) {
+      //     case "1": {
+      //       document.write("2층으로 가세요.");
+      //       break;
+      //     }
+      //     case "2": {
+      //       document.write("3층으로 가세요.");
+      //       break;
+      //     }
+      //     case "3": {
+      //       document.write("별관으로 가세요.");
+      //       break;
+      //     }
+      //     default: {
+      //       document.write("1층 안내실로 가세요.");
+      //     }
+      //   }
+
+      //   classRoom = prompt(
+      //     "학년을 입력하세요",
+      //     "1학년:1, 2학년:2, 3학년:3, 기타:4"
+      //   );
+      //   switch (classRoom) {
+      //     case "1": {
+      //       document.write("2층으로 가세요.");
+      //       break;
+      //     }
+      //     case "2": {
+      //       document.write("3층으로 가세요.");
+      //       break;
+      //     }
+      //     case "3": {
+      //       document.write("별관으로 오세요.");
+      //       break;
+      //     }
+      //     default: {
+      //       document.write("1층 안내실로 오세요.");
+      //     }
+      //   }
+
+      //   let apartment = prompt("호실을 입력하세요", "301, 302, 303");
+      //   switch (apartment) {
+      //     case "301": {
+      //       document.write("301호 입니다");
+      //       break;
+      //     }
+      //     case "302": {
+      //       document.write("302호 입니다");
+      //       break;
+      //     }
+      //     case "303": {
+      //       document.write("303호 입니다");
+      //       break;
+      //     }
+      //     default: {
+      //       document.write("나가주세요");
+      //     }
+      //   }
+    </script>
+  </body>
+</html>
