@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #control_box {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border: 1px solid black;
+      }
+      button {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        background-color: red;
+        color: white;
+        text-align: center;
+        border: none;
+      }
+      #left {
+        left: 0px;
+        top: 50px;
+      }
+      #right {
+        left: 100px;
+        top: 50px;
+      }
+      #up {
+        left: 50px;
+        top: 0px;
+      }
+      #down {
+        left: 50px;
+        top: 100px;
+      }
+      #stop {
+        left: 50px;
+        top: 50px;
+      }
+      #box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        left: 300px;
+        top: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <div id="control_box">
+      <button type="button" id="left">←</button>
+      <button type="button" id="right">→</button>
+      <button type="button" id="up">↑</button>
+      <button type="button" id="down">↓</button>
+      <button type="button" id="stop">ㅁ</button>
+    </div>
+    <script>
+      //객체구하기
+      const btnLeft = document.querySelector("#left");
+      const btnRight = document.querySelector("#right");
+      const btnUp = document.querySelector("#up");
+      const btnDown = document.querySelector("#down");
+      const btnStop = document.querySelector("#stop");
+      const boxEle = document.querySelector("#box");
+      let boxTop = 300;
+      let boxLeft = 300;
+      let btnMode = "stop";
+      function moveBox() {
+        switch (btnMode) {
+          case "left":
+            boxLeft -= 1;
+            break;
+          case "right":
+            boxLeft += 1;
+            break;
+          case "up":
+            boxTop -= 1;
+            break;
+          case "down":
+            boxTop += 1;
+            break;
+          case "stop":
+            break;
+          default:
+            break;
+        }
+        boxEle.style.left = boxLeft + "px";
+        boxEle.style.top = boxTop + "px";
+      }
+      setInterval(moveBox, 20);
+      function up() {
+        btnMode = "up";
+      }
+      function down() {
+        btnMode = "down";
+      }
+      function left() {
+        btnMode = "left";
+      }
+      function right() {
+        btnMode = "right";
+      }
+      function stop() {
+        btnMode = "stop";
+      }
+      btnUp.addEventListener("click", up);
+      btnDown.addEventListener("click", down);
+      btnLeft.addEventListener("click", left);
+      btnRight.addEventListener("click", right);
+      btnStop.addEventListener("click", stop);
+    </script>
+  </body>
+</html>

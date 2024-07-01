@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM</title>
+    <style media="screen">
+      .cta {
+        padding: 3em;
+        background: #d2d434;
+        text-align: center;
+      }
+      .cta a {
+        padding: 0 0.5em;
+        font-size: 2em;
+        font-weight: 900;
+        color: #615206;
+        text-decoration: none;
+        border: 5px solid #837325;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cta">
+      <a href="#">DOM TEST</a>
+    </div>
+    <script>
+      // 05.DOM속성변경하기
+      const CTA = document.querySelector(".cta>a"); // a(Dom TEST) 태그 요소 찾아
+
+      if (CTA.hasAttribute("target")) {
+        let strTemp = CTA.getAttribute("target");
+        alert(strTemp);
+      } else {
+        CTA.setAttribute("target", "_blank");
+      }
+
+      if (CTA.hasAttribute("href")) {
+        let strTemp = CTA.getAttribute("href");
+        alert(strTemp);
+        CTA.setAttribute("href", "https://www.naver.com");
+      } else {
+        alert("이동할 페이지 없음!");
+        CTA.setAttribute("href", "https://www.daum.net");
+      }
+
+      // 05.DOM속성변경하기 연습-----------------------------------
+      //   const CTA = document.querySelector(".cta>a");
+      //   if (CTA.hasAttribute("href")) {
+      //     let strTemp = CTA.getAttribute("href");
+      //     alert(strTemp);
+      //     CTA.setAttribute("href", "https://www.google.com");
+      //   } else {
+      //     alert("구글 경로 없음!!!");
+      //     CTA.setAttribute("href", "https://www.naver.com");
+      //   }
+      //-----------------------------------------------------------
+    </script>
+  </body>
+</html>

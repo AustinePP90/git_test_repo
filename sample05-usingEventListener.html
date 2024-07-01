@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 150px;
+        margin: 0 15px;
+        font: bold 25px/50px Arial;
+        background-color: red;
+        color: #fff;
+        text-align: center;
+        border: none;
+      }
+
+      #box {
+        position: absolute;
+        left: 0;
+        top: 200px;
+        width: 50px;
+        height: 50px;
+        z-index: 1;
+        background-color: #0066ff;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="play">Play</button>
+    <button type="button" id="stop">Stop</button>
+    <div id="box"></div>
+    <script>
+      const btnPlay = document.getElementById("play");
+      const btnStop = document.getElementById("stop");
+      let boxEle = document.getElementById("box");
+
+      let boxLeft = 0;
+      let boxTop = 200;
+
+      function moveBox() {
+        boxLeft += 1;
+        boxEle.style.left = boxLeft + "px";
+      }
+
+      let mvTimer;
+      function play() {
+        mvTimer = setInterval(moveBox, 30);
+      }
+
+      function stop() {
+        clearInterval(mvTimer);
+      }
+
+      function handleKeyDown(event) {
+        switch (event.key) {
+          case "ArrowLeft":
+            boxLeft -= 10;
+            break;
+          case "ArrowRight":
+            boxLeft += 10;
+            break;
+          case "ArrowUp":
+            boxTop -= 10;
+            break;
+          case "ArrowDown":
+            boxTop += 10;
+            break;
+        }
+        boxEle.style.left = boxLeft + "px";
+        boxEle.style.top = boxTop + "px";
+      }
+
+      btnPlay.addEventListener("click", play);
+      btnStop.addEventListener("click", stop);
+      document.addEventListener("keydown", handleKeyDown);
+    </script>
+  </body>
+</html>

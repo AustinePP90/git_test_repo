@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        text-align: center;
+        width: 500px;
+        margin: 0 auto;
+        font: bold 25px/45px "나눔고딕", sans-serif;
+        color: #666;
+      }
+      div > p {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p class="num01">현재시간</p>
+      <p class="num02">현재분</p>
+      <p class="num03">현재초</p>
+    </div>
+    <script>
+      // <p>요소 들어가기
+      const hrP = document.querySelector(".num01");
+      const minP = document.querySelector(".num02");
+      const secP = document.querySelector(".num03");
+      // 함수 만들기 -  시간, 분, 초
+      function setClock() {
+        const newDate = new Date();
+        const hours = newDate.getHours();
+        const minutes = newDate.getMinutes();
+        const seconds = newDate.getSeconds();
+        // <p>요소에 시간, 분, 초 입력하기
+        // 오후, 오전 표시하기
+        // 12시 기준으로 표시하기
+        // 두자릿수로 표현하기
+        if (hours > 12) {
+          hrP.textContent =
+            hours - 12 < 10 ? `오후 0${hours - 12} :` : `오후 ${hours - 12} :`;
+        } else {
+          hrP.textContent = hours < 10 ? `오전 0${hours} :` : `오전 ${hours} :`;
+        }
+        minP.textContent = minutes < 10 ? `0${minutes} :` : `${minutes} :`;
+        secP.textContent = seconds < 10 ? `0${seconds}` : `${seconds}`;
+      }
+      // 함수 기본 호출(브라우저 시작하자 마자 함수 바로 호출)
+      setClock();
+      // 1초마다 함수 반복하기
+      setInterval(setClock, 1000);
+    </script>
+  </body>
+</html>
