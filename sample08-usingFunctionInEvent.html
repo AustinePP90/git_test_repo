@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        display: none;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="title1">제목1</h2>
+    <ul id="list1">
+      <li>리스트1-1</li>
+      <li>리스트1-2</li>
+      <li>리스트1-3</li>
+      <li>리스트1-4</li>
+    </ul>
+    <h2 id="title2">제목2</h2>
+    <ul id="list2">
+      <li>리스트1-1</li>
+      <li>리스트1-2</li>
+      <li>리스트1-3</li>
+      <li>리스트1-4</li>
+    </ul>
+
+    <script>
+      const titleOne = document.getElementById("title1");
+      const listOne = document.getElementById("list1");
+      const titleTwo = document.getElementById("title2");
+      const listTwo = document.getElementById("list2");
+
+      // function changeDisplayBlockOne() {
+      //   listOne.style.display = "block";
+      // }
+      // function changeDisplayNoneOne() {
+      //   listOne.style.display = "None";
+      // }
+      // function changeDisplayBlockTwo() {
+      //   listTwo.style.display = "block";
+      // }
+      // function changeDisplayNoneTwo() {
+      //   listTwo.style.display = "None";
+      // }
+
+      // titleOne.addEventListener("mouseover", changeDisplayBlockOne);
+
+      // titleOne.addEventListener("mouseout", changeDisplayNoneOne);
+
+      // titleTwo.addEventListener("mouseover", changeDisplayBlockTwo);
+
+      // titleTwo.addEventListener("mouseout", changeDisplayNoneTwo);
+
+      // 매개변수가 있는 함수의 사용 -> 익명함수를 사용-----------------------------
+      function changeDisplayBlock(list) {
+        list.style.display = "block";
+      }
+      function changeDisplayNone(list) {
+        list.style.display = "None";
+      }
+
+      // titleOne.addEventListener("mouseover", () => {
+      //   changeDisplayBlock(listOne);
+      // });
+      // titleOne.addEventListener("mouseout", () => {
+      //   changeDisplayNone(listOne);
+      // });
+      // titleTwo.addEventListener("mouseover", () => {
+      //   changeDisplayBlock(listTwo);
+      // });
+      // titleTwo.addEventListener("mouseout", () => {
+      //   changeDisplayNone(listTwo);
+      // });
+
+      titleOne.addEventListener("mouseover", function () {
+        changeDisplayBlock(listOne);
+      });
+      titleOne.addEventListener("mouseout", function () {
+        changeDisplayNone(listOne);
+      });
+      titleTwo.addEventListener("mouseover", function () {
+        changeDisplayBlock(listTwo);
+      });
+      titleTwo.addEventListener("mouseout", function () {
+        changeDisplayNone(listTwo);
+      });
+      // --------------------------------------------------------------------------
+    </script>
+  </body>
+</html>
