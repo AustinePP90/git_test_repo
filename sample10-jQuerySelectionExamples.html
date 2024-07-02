@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <button id="btn01">button</button>
+    <!-- <div id="container">
+      <nav>
+        <ul class="list">
+          <li id="first" One></li>
+          <li>Two</li>
+          <li>Three</li>
+        </ul>
+      </nav>
+    </div> -->
+
+    <!-- <ul class="nav1">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul> -->
+
+    <!-- <ul class="nav2">
+      <li>apple</li>
+      <li>banana</li>
+      <li></li>
+    </ul> -->
+
+    <!-- <div id="containter">
+      <ul class="nav1">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+
+      <ul class="nav2">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div> -->
+
+    <!-- <ul class="box05">
+      <li id="first" title="a 1 a">This is paragraph</li>
+      <li class="second" title="bb">This is paragraph</li>
+      <li id="third" title="cerc">This is paragraph</li>
+      <li class="fourth" title="">This is paragraph</li>
+    </ul> -->
+
+    <ul class="box06">
+      <li id="first" title="a 1 a">This is paragraph</li>
+      <li class="second" title="bb">This is paragraph</li>
+      <li id="third" title="cerc">This is paragraph</li>
+      <li class="fourth" title="">This is paragraph</li>
+    </ul>
+    <script>
+      //   $(function () {
+      //     $("#btn01").click(function (e) {
+      //       //   $("ul.list > li:nth-of-type(2)").css({
+      //       //     "background-color": "#9AB92E",
+      //       //     color: "#05184D",
+      //       //   });
+      //       $("ul.list > li:eq(1)").css({
+      //         "background-color": "#9AB92E",
+      //         color: "#05184D",
+      //       });
+      //     });
+      //   });
+
+      //   $(function () {
+      //     $("#btn01").click(function (e) {
+      //       $("li:not(:eq(1))").css({
+      //         "background-color": "#9AB92E",
+      //         border: "1px dotted #05184D",
+      //       });
+      //     });
+      //   });
+
+      //   $(function () {
+      //     $("#btn01").click(function () {
+      //       $("li:empty").text("orange");
+      //     });
+      //   });
+
+      //   $(function () {
+      //     $("#btn01").click(function () {
+      //       $("ul.nav1 li:lt(2), ul.nav2-- li:lt(2) ").css({
+      //         "background-color": "#9ab92e",
+      //         border: "1px dotted #05184d",
+      //       });
+      //     });
+      //   });
+
+      //   $(function () {
+      //     $("#btn01").click(function () {
+      //       $("li[id^=f][id*=s]").css({
+      //         "background-color": "#00c8c3",
+      //         border: "1px dotted #05184d",
+      //       });
+      //     });
+      //   });
+
+      $(function () {
+        $("#btn01").click(function () {
+          $("li[title!='bb']").css({
+            "background-color": "#00c8c3",
+            border: "1px dotted #05184d",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

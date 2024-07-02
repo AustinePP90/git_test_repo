@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <p><button id="btn-01">Click Me</button></p>
+    <ul>
+      <li id="first" title="a 1 a">content</li>
+      <li id="second" title="bb">content</li>
+      <li id="third" title="cerc">content</li>
+      <li class="fourth" title="ded">content</li>
+    </ul>
+    <script>
+      $(function () {
+        $("#btn-01").click(function () {
+          $("li[title^='a']").css("color", "#fff");
+          $("li[title!='bb']").css("background-color", "green");
+          $("li[title='bb'][id^='s']").css("background-color", "yellow");
+          $("li[id='first']").css("font-size", "20px");
+          $("li[id$='d']").css("color", "red");
+        });
+      });
+    </script>
+  </body>
+</html>
