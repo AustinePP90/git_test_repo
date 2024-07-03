@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <ul id="btn">
+      <li><a href="./img/room_01.jpg" id="btn01">room1</a></li>
+      <li><a href="./img/room_02.jpg" id="btn01">room2</a></li>
+      <li><a href="./img/room_03.jpg" id="btn01">room3</a></li>
+      <li><a href="./img/room_04.jpg" id="btn01">room4</a></li>
+    </ul>
+    <p><img id="back-img" src="./img/room_05.jpg" alt="room5" /></p>
+
+    <script>
+      $(function () {
+        $("li>a")
+          .dblclick(function (e) {
+            let pic = $(this).attr("href");
+            $("p>img").attr("src", pic);
+            return false;
+          })
+          .click(function (e) {
+            return false;
+          });
+      });
+    </script>
+  </body>
+</html>
