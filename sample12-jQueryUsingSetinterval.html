@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section>
+      <p class="box01">
+        <img src="../day17/images/pic1.jpg" alt="sample" />
+      </p>
+    </section>
+    <script>
+      //   $(function () {
+      //     let i = 1;
+      //     $("#btn01").click(function () {
+      //       if (i < 7) {
+      //         i++;
+      //         $("img").attr("src", "../day17/images/pic" + i + ".jpg");
+      //         $(".test").text(i);
+      //       } else {
+      //         i = 1;
+      //         $("img").attr("src", "../day17/images/pic1.jpg");
+      //         $(".test").text(i);
+      //       }
+      //     });
+      //   });
+
+      $(function () {
+        let i = 1;
+        setInterval(function () {
+          if (i <= 15) {
+            $("img").attr("src", "./run/" + i + ".png");
+            i++;
+          } else {
+            i = 1;
+            $("img").attr("src", "./run/1.png");
+          }
+        }, 60);
+      });
+    </script>
+  </body>
+</html>
