@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        background-color: #666;
+      }
+
+      p {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        cursor: pointer;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p></p>
+    </div>
+
+    <script>
+      $(function () {
+        $("p").on("click", function () {
+          let divWidth = Math.round(Math.random() * 450);
+          let divHeight = Math.round(Math.random() * 250);
+          $("p").animate({ left: divWidth, top: divHeight }, 600, "swing");
+        });
+      });
+    </script>
+  </body>
+</html>
