@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Effects and Animations</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        .back01 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn02">Button 2</button>
+    <div class="back01"></div>
+    <script>
+        let bTest = true;
+        $('.btn02').on('click', () => {
+            // 요소의 투명도와 배경색을 동시에 애니메이션합니다.
+            if(bTest){
+                $('.back01').animate({
+                    opacity: 0.1, backgroundColor: 'red'
+                }, 900,()=>{
+                    $('.back01').fadeOut(100);
+                })
+            }
+            else{
+                $('.back01').fadeTo(100,0.1,()=>{
+                    $('.back01').animate({
+                    opacity: 1 ,backgroundColor: '#099'
+                }, 900);
+                });
+            }
+            bTest = !bTest;
+        });
+    </script>
+</body>
+</html>

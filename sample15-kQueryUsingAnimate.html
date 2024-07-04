@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        width: 400px;
+        height: 267px;
+      }
+
+      ul {
+        width: 800px;
+        height: 267px;
+      }
+
+      ul > li {
+        float: left;
+        list-style: none;
+      }
+
+      ul > li > img {
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li id="flower"><img src="img/flower.jpg" alt="flower" /></li>
+        <li id="building"><img src="img/building.jpg" alt="building" /></li>
+      </ul>
+    </div>
+    <script>
+      $(function () {
+        $("#flower").on("click", function () {
+          let imgWidth = $(this).width();
+          $("div>ul").animate({ "margin-left": "-=" + imgWidth }, 300, "swing");
+        });
+
+        $("#building").on("click", function () {
+          let imgWidth = $(this).width();
+          $("div>ul").animate({ "margin-left": "+=" + imgWidth }, 300, "swing");
+        });
+      });
+    </script>
+  </body>
+</html>

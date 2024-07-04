@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"
+      integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .txt {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin-left: 0;
+        margin-top: 0;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="aniBtn">애니메이션시작</button>
+    <div class="txt"></div>
+
+    <script>
+      $(function () {
+        $("#aniBtn").on("click", function loop() {
+          $(".txt")
+            .animate({ marginLeft: "200px", backgroundColor: "green" }, 800)
+            .animate({ marginTop: "200px" }, 800)
+            .delay(500)
+            .animate({ marginLeft: "0", backgroundColor: "red" }, 800)
+            .animate({ marginTop: "0" }, 800, loop);
+        });
+      });
+    </script>
+  </body>
+</html>
