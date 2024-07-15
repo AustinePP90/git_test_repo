@@ -278,16 +278,6 @@
         { name: "세종대왕", age: 66 },
       ];
 
-      //   manArr.map((name, index) => {
-      //     if (name.age <= 19) {
-      //       console.log(name.name + ": " + 900 + "원");
-      //     } else if (name.age >= 60) {
-      //       console.log(name.name + ": " + 500 + "원");
-      //     } else {
-      //       console.log(name.name + ": " + 1000 + "원");
-      //     }
-      //   });
-
       const manArr2 = manArr.map((name) => {
         if (name.age <= 19) {
           return name.name + ": " + 900 + "원";
@@ -299,10 +289,22 @@
       });
       console.log(manArr2);
 
+      const manArr3 = manArr.map((name) => {
+        let fee = 1000;
+        if (name.age <= 19) {
+          return `${name.name}: ${fee * 0.9}원`;
+        } else if (name.age >= 60) {
+          return `${name.name}: ${fee * 0.5}원`;
+        } else {
+          return `${name.name}: ${fee}원`;
+        }
+      });
+      console.log(manArr3);
+
       const animalArr = ["강아지", "망아지", "야옹이", "어흥이", "거북이"];
       // 홀수번째만 출력
       animalArr.map((name, index) => {
-        if ((index + 1) % 2 == 1) {
+        if (index % 2 == 0) {
           console.log(name);
         }
       });
